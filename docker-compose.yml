@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  asset-manager:
+    build: .
+    container_name: asset-manager-server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./assets.db:/app/assets.db
+    restart: always
+    environment:
+      - PYTHONUNBUFFERED=1
